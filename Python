@@ -1,0 +1,146 @@
+# 1. Right Angled Triangle
+print("*")
+print("**")
+print("***")
+print("****")
+print("*****")
+
+#OR
+
+rows=5
+for x in range(1, rows + 1):
+    for y in range(1, x + 1):
+        print('*', end='')
+    print()
+
+#2. Take a string, integer, char, double input from user and print it using (for input) #a) InputStreamReader b) Scanner Class
+
+
+
+
+#3.Print the sequence shown in 1) but the number rows should be decided by the user
+rows=int(input("Enter rows:"")) #rows=5
+for x in range(1, rows + 1):
+    for y in range(1, x + 1):
+        print('*', end='')
+    print()
+
+#4.Take string input from user and count no of  vowels in it
+x = input("Enter string:")
+vowels = 0
+for i in x:
+    if (i=='a' or i=='e' or i='i' or i='o' or i='u'):
+        vowels = vowels + 1
+    print("Total number of vowels:")
+    print(vowels)
+
+#5. Create an integer array, fill it with user’s inputs and then sort it with bubble sort
+
+def bubble_sort(array):
+    x = len(array) - 1
+    sorted = False
+
+    while not sorted:
+        sorted = True
+        for i in range(0, x):
+            if array[i] > array[i+1]:
+                sorted = False
+                array[i], array[i+1] = array[i+1], array[i]
+    return array
+
+array = [2,3,6,1,7,4,0,8]
+print(bubble_sort(array))
+
+#6. Implement a calculator.
+import math
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def sin(x):
+    return math.sin(math.radians(x))
+
+def cos(x):
+    return math.cos(math.radians(x))
+
+def tan(x):
+    return math.tan(math.radians(x))
+
+def exp(x, y):
+    return x ** y
+
+print("Select operation.")
+print("1.Add")
+print("2.Subtract")
+print("3.Multiply")
+print("4.Sin")
+print("5.Cos")
+print("6.Tan")
+print("7.Exp")
+while True:
+    oper = input("Enter oper(1/2/3/4/5/6/7): ")
+
+    if oper in ('1', '2', '3', '7'):
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
+    else:
+        num1 = float(input("enter angle:"))
+
+    if oper == '1':
+            print(num1, "+", num2, "=", add(num1, num2))
+
+        elif oper == '2':
+            print(num1, "-", num2, "=", subtract(num1, num2))
+
+        elif oper == '3':
+            print(num1, "*", num2, "=", multiply(num1, num2))
+
+        elif oper == '4':
+            print(sin(num1))
+
+        elif oper == '5':
+            print(cos(num1))
+
+        elif oper == '6':
+            print(tan(num1))
+
+        elif oper == '7':
+            print(num1, "^", num2 "=", exp(num1, num2))
+        break
+    else:
+        print("Invalid Input")
+
+#7. Take two string inputs from the user and check if they are the same
+inpt1 = input("Enter String 1")
+inpt2 = input("Enter String 2")
+if inpt1 == inpt2:
+    print("They are same")
+else:
+    print("They are not the same")
+
+#8. Take an integer input from the user and check if it is palindrome.
+number=int(input("Enter number:"))
+temp = number
+
+reverse_number = 0
+while(number > 0):
+    reverse_number = (reverse_number*10) + number%10
+    number = number // 10
+if(temp == reverse_number):
+    print("It is a palindrome number")
+else:
+    print("It is not a palindrome number")
+
+#9. implement the following
+#During acceleration  testing you press 1 once when the car leaves the start line and press once again when the car crosses the finish line. The program should print the acceleration time. Now the endurance testing starts and you give an input 2. Now whenever the car passes the startline you press 1 the lap time is printed. Now when acceleration testing starts you press 2 again.  At the end of you press 0 to stop the program
+
+
+#10. Take three string inputs representing lap times in minute:seconds:milliseconds format and print which lap was the fastest
+
+
+#11. Take two integer inputs from the user and subtract one from the other without using minus operator
