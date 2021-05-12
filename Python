@@ -141,6 +141,68 @@ else:
 
 
 #10. Take three string inputs representing lap times in minute:seconds:milliseconds format and print which lap was the fastest
+lmin1 = int(input("Enter lap 1 minute:"))
+lsec1 = int(input("Enter lap 1 second:"))
+lmsec1 = int(input("Enter lap 1 millisecond:"))
+
+lmin2 = int(input("Enter lap 2 minute:"))
+lsec2 = int(input("Enter lap 2 second:"))
+lmsec2 = int(input("Enter lap 2 millisecond:"))
+
+lmin3 = int(input("Enter lap 3 minute:"))
+lsec3 = int(input("Enter lap 3 second:"))
+lmsec3 = int(input("Enter lap 3 millisecond:"))
+
+l1 =  lmin1 * 60000 + lsec1 * 1000 + lmsec1
+l2 = lmin2 * 60000 + lsec2 * 1000 + lmsec2
+l3 = lmin3 * 60000 + lsec3 * 1000 + lmsec3
+
+def smallest(l1, l2, l3):
+    if (l1 > l2) and (l1 > l3):
+        print("The fastest lap time:" lmin1 ":" lsec1 ":" lmsec1)
+    elif (l2 < l1) and (l2 < l3):
+        print("The fastest lap time:" lmin2 ":" lsec2 ":" lmsec2)
+    else:
+        print("The fastest lap time:" lmin3 ":" lsec3 ":" lmsec3)
 
 
 #11. Take two integer inputs from the user and subtract one from the other without using minus operator
+num1 = int(input("Enter Number to be the minuend:"))
+num2 = int(input("Enter number to be the subtrahend:"))
+
+sub = num1 + (~num2 + 1) # ~num = -(num+1) [Negation Operator]
+print(sub)
+
+#12. Do the 10) question without using if-else
+lmin1 = int(input("Enter lap 1 minute:"))
+lsec1 = int(input("Enter lap 1 second:"))
+lmsec1 = int(input("Enter lap 1 millisecond:"))
+
+lmin2 = int(input("Enter lap 2 minute:"))
+lsec2 = int(input("Enter lap 2 second:"))
+lmsec2 = int(input("Enter lap 2 millisecond:"))
+
+lmin3 = int(input("Enter lap 3 minute:"))
+lsec3 = int(input("Enter lap 3 second:"))
+lmsec3 = int(input("Enter lap 3 millisecond:"))
+
+l1 = int(lmin1 * 60000 + lsec1 * 1000 + lmsec1)
+l2 = int(lmin2 * 60000 + lsec2 * 1000 + lmsec2)
+l3 = int(lmin3 * 60000 + lsec3 * 1000 + lmsec3)
+
+x = min(l1, l2 ,l3)
+print("Fastest lap time in millisecond is:", x)
+
+#13. Do the 7) question again such that the checking is done in a separate function and returns the following:
+#0: both strings are same with case sensitivity
+#1: both strings are same without case sensitivity
+#2: They are not same
+
+#14.Do the 5th question again by implementing the bubble sort algorithm in a separate function however the function shouldnt return anything.
+
+#15.Implement two classes hello_world and intro such that both are in separate files.
+
+#16.Create a class MIT and a class student. The class student has the following private data members:
+
+#17.Take a array of ASCII integers and print them into a readable string.Also vice versa in the same code."
+
