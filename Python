@@ -155,7 +155,7 @@ def Acc_test(flag = 1,start = 0):
         Acc_test(flag,start)
     elif (a == 1 and flag == 0):
         print(time.time() - start,"seconds")
-        c = int(input("Enter input "))
+        c = int(input("Enter input: "))
         if (c==1):
             Acc_test()
         elif (c==2):
@@ -166,10 +166,10 @@ def Acc_test(flag = 1,start = 0):
 
 def End_test():
     start = time.time()
-    c = int(input("To display lap time press 1"))
+    c = int(input("To display lap time press 1 or to end Endurance press 2:"))
     while c == 1:
         print("Lap time : {} seconds".format(time.time()-start))
-        c = int(input("To display lap time press 1"))
+        c = int(input("To display lap time press 1 or to end Endurance press 2:"))
 
     if (c==2):
         Acc_test()
