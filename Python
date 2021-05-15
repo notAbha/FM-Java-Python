@@ -148,7 +148,7 @@ else:
 import time
 
 def Acc_test(flag = 1,start = 0):
-    a = int(input("To start test, Press 1: "))
+    a = int(input("To start test, Press 1:"))
     if (a == 1 and flag == 1):
         start = time.time()
         flag = 0
