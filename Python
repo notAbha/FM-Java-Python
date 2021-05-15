@@ -14,8 +14,15 @@ for x in range(1, rows + 1):
     print()
 
 #2. Take a string, integer, char, double input from user and print it using (for input) #a) InputStreamReader b) Scanner Class
+str = input("Enter String:")
+char = input("Enter Character")
+int = input("Enter integer:")
+doub = input("Enter a decimal value:")
 
-
+print("The string is ", str)
+print("The character is ", char)
+print("The integer is ", int)
+print("The decimal value is ", doub)
 
 
 #3.Print the sequence shown in 1) but the number rows should be decided by the user
@@ -138,9 +145,16 @@ else:
 
 #9. implement the following
 #During acceleration  testing you press 1 once when the car leaves the start line and press once again when the car crosses the finish line. The program should print the acceleration time. Now the endurance testing starts and you give an input 2. Now whenever the car passes the startline you press 1 the lap time is printed. Now when acceleration testing starts you press 2 again.  At the end of you press 0 to stop the program
+def Acc_test():
 
 
-#10. Take three string inputs representing lap times in minute:seconds:milliseconds format and print which lap was the fastest
+
+
+
+
+
+
+#10/12. Take three string inputs representing lap times in minute:seconds:milliseconds format and print which lap was the fastest
 lmin1 = int(input("Enter lap 1 minute:"))
 lsec1 = int(input("Enter lap 1 second:"))
 lmsec1 = int(input("Enter lap 1 millisecond:"))
@@ -193,16 +207,95 @@ l3 = int(lmin3 * 60000 + lsec3 * 1000 + lmsec3)
 x = min(l1, l2 ,l3)
 print("Fastest lap time in millisecond is:", x)
 
-#13. Do the 7) question again such that the checking is done in a separate function and returns the following:
-#0: both strings are same with case sensitivity
-#1: both strings are same without case sensitivity
-#2: They are not same
+
+#13.Do the 7) question again such that the checking is done in a separate function
+inpt1 = input("Enter String 1")
+inpt2 = input("Enter String 2")
+
+def cmpr():
+str1 = inpt1.upper()
+str2 = inpt2.upper()
+
+if(str1 == str2):
+    if (inpt1 == inpt2):
+        print("both strings are same with case sensitivity")
+    else:
+        print("both strings are same without case sensitivity")
+else:
+    print("They are not same")
+
 
 #14.Do the 5th question again by implementing the bubble sort algorithm in a separate function however the function shouldnt return anything.
+def bubble_sort(array):
+    x = len(array) - 1
+    sorted = False
+
+    while not sorted:
+        for i in range(0, x):
+            if array[i] > array[i+1]:
+                array[i], array[i+1] = array[i+1], array[i]
+    return array
+
+array = []
+num = int(input("Enter the number of elements:"))
+for i in range(0, num):
+    x = int(input())
+    array.append(x)
+print("Unsorted list:")
+print("Sorted list:", bubble_sort(array))
+
 
 #15.Implement two classes hello_world and intro such that both are in separate files.
+class hello_world:
+    def __init__ (self, first):
+        self.first = first
+hello = hello_world('hello world')
+print(hello.first)
+
+class intro:
+    def __init__(self,intro):
+        self.intro = intro
+Introduction = introduction('Hi I am a student of MIT')
+print(Introduction.intro)
+
 
 #16.Create a class MIT and a class student. The class student has the following private data members:
+class MIT:
+    def __init__(info):
+        info.type = 'Student'
+        info.sut1 = info.student1()
+        info.sut2 = info.student2()
+        info.sut3 = info.student3()
+    def show(info):
+        print('Type:', info.type)
 
-#17.Take a array of ASCII integers and print them into a readable string.Also vice versa in the same code."
+    class student1:
+        def __init__(info):
+            info.name = 'Abhay'
+            info.registration = 200907354
+            info.branch = 'Electronics and Communication Engineering'
+        def display(info):
+            print('Name:', info.name, 'Registration:', info.registration, 'Branch:', info.branch)
+
+        class student3:
+            def __init__(info):
+                info.name = 'Catol'
+                info.registration = 200794574
+                info.branch = 'Mechatronics'
+            def display(info):
+                print('Name:', info.name, 'Registration:', info.registration, 'Branch:', info.branch)
+
+outer = MIT()
+outer.show()
+s1 = outer.sut1
+s2 = outer.sut2
+s3 = outer.sut3
+print()
+s1.display()
+print()
+s1.display()
+print()
+s2.display()
+print()
+s3.display()
 
