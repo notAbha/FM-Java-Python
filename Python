@@ -324,3 +324,18 @@ s2.display()
 print()
 s3.display()
 
+
+#17.Take a array of ASCII integers and print them into a readable string.Also vice versa in the same code."
+def int_to_ascii(nums):
+    newst = ''
+
+    for i in nums:
+        newst+=chr(i)
+    return newst
+def ascii_to_int(st):
+    newl = []
+
+    for i in st:
+        newl.append(ord(i))
+    return newl
+
