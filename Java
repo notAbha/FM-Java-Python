@@ -1,0 +1,355 @@
+package com.formulaManipal;
+
+//1. Star right-angled triangle
+public class RightTrianglePattern {
+    public static void main(String arg[]){
+        int i = 0; int j = 0;
+        for (i = 0; i <= 4; i++){
+            for (j = 0; j <= i; j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+//2. Take a string, integer, char, double input from user and print it using (for input)
+import java.util.Scanner;
+public class UserInput {
+    public static void main(String args[]) {
+        Scanner myObj = new Scanner(System.in);
+
+        System.out.println("Enter input values- String. Integer, Char, Double");
+        String str = myObj.nextLine();
+
+        int num = myObj.nextInt();
+        String char = myObj.nextLine();
+        double doub = myObj.nextDouble();
+        System.out.println("integer:  " + num);
+        System.out.println("string:  " + str);
+        System.out.println("char " + char);
+        System.out.println("double:  " + doub);
+    }
+}
+
+// 3.But the number rows should be decided by the user
+import java.util.*;
+
+public class RightTrianglePattern {
+    public static void main(String args[]) {
+        int rows, i, j;
+
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter number of rows in pattern");
+        rows = in.nextInt();
+
+        for(i = 1; i <= rows; i++) {
+            /* Prints one row of triangle */
+            for(j = 1; j <= i; ++j) {
+                System.out.print("* ");
+            }
+            /* move to next row */
+            System.out.print("\n");
+        }
+    }
+}
+
+//4. Take string input from user and count no of  vowels in it
+import java.util.Scanner;
+public class CountVowels {
+    public static void main(String args[]){
+        int count = 0;
+        System.out.println("Enter input :");
+        Scanner sc = new Scanner(System.in);
+        String line = sc.nextLine();
+
+        for (int i = 0 ; i < line.length(); i++){
+            char ch = line.charAt(i);
+            if(ch == 'a'|| ch == 'e'|| ch == 'i' ||ch == 'o' ||ch == 'u'||ch == ' '){
+                count ++;
+            }
+        }
+        System.out.println("Number of vowels in the given sentence is: "+count);
+    }
+}
+
+//5. Create an integer array, fill it with user’s inputs and then sort it with bubble sort
+import java.util.Scanner;
+class BubbleSort {
+    public static void main(String []args) {
+        int n, c, d, swap;
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter number of integers to sort");
+        n = in.nextInt();
+        int array[] = new int[n];
+        System.out.println("Enter " + n + " integers");
+        for (c = 0; c < n; c++)
+            array[c] = in.nextInt();
+        for (c = 0; c < ( n - 1 ); c++) {
+            for (d = 0; d < n - c - 1; d++) {
+                if (array[d] > array[d+1]) { // descending order use < , Ascending order use >
+                    swap       = array[d];
+                    array[d]   = array[d+1];
+                    array[d+1] = swap;
+                }
+            }
+        }
+        System.out.println("Sorted input are as follows:");
+        for (c = 0; c < n; c++)
+            System.out.println(array[c]);
+    }
+}
+
+
+//6. Implement a calculator.
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        int oper;
+        Double number1, number2, result;
+        Scanner input = new Scanner(System.in);
+        System.out.println("Choose an operator: + = 1, - = 2, * = 3, sin = 4, cos = 5, tan = 6, exp = 7");
+        oper= input.nextInt();
+
+        if (oper == 1 || oper == 2 || oper == 3 || oper == 7) {
+            System.out.println("Enter first number");
+            number1 = input.nextDouble();
+            System.out.println("Enter second number");
+            number2 = input.nextDouble();
+        }
+        else
+            number1 = input.nextDouble();
+
+        switch (oper) {
+
+            case 1:
+                result = number1 + number2;
+                System.out.println(number1 + " + " + number2 + " = " + result);
+                break;
+
+
+            case 2:
+                result = number1 - number2;
+                System.out.println(number1 + " - " + number2 + " = " + result);
+                break;
+
+
+            case 3:
+                result = number1 * number2;
+                System.out.println(number1 + " * " + number2 + " = " + result);
+                break;
+
+
+            case '/':
+                result = number1 / number2;
+                System.out.println(number1 + " / " + number2 + " = " + result);
+                break;
+
+            case 4:
+                result = Math.toDegrees(Math.sin(number1));
+                System.out.println("The value of sin("+number1+")"+" is "+result);
+                break;
+            case 5:
+                result = Math.toDegrees(Math.cos(number1));
+                System.out.println("The value of cos("+number1+")"+" is "+result);
+                break;
+            case 6:
+                result = Math.toDegrees(Math.tan(number1));
+                System.out.println("The value of tan("+number1+")"+" is "+result);
+                break;
+            case 7:
+                result = Math.pow(number1, number2);
+                System.out.println("The value of "+number1+"^"+number2+" is "+result);
+                break;
+            default:
+                System.out.println("Invalid operator!");
+                break;
+        }
+
+        input.close();
+    }
+}
+
+//7. Take two string inputs from the user and check if they are the same
+import java.util.Scanner;
+public class CmprStrgs {
+    public static void main(String args[]){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter first string: ");
+        String a = input.nextLine();
+        System.out.println("Enter second string: ");
+        String b = input.nextLine();
+
+        if(a.equals(b)){
+            System.out.println("Both strings are equal.");
+        } else {
+            System.out.println("Both strings are not equal.");
+        }
+
+        if(a.equalsIgnoreCase(b)){
+            System.out.println("Both strings are equal.");
+        } else {
+            System.out.println("Both strings are not equal.");
+        }
+    }
+}
+
+//8. Take an integer input from the user and check if it is palindrome
+import java.util.Scanner;
+public class Palindrome {
+    public static boolean (int integer) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the number: ");
+        int num = input.nextInt();
+        int reverse, remainder;
+        while (num != 0) {
+            remainder = num % 10;
+            reverse = reverse * 10 + remainder;
+            num = num / 10;
+        }
+        if (num == reverse) {
+            return true;
+        }
+        else {
+            return false;
+        }
+        }
+}
+
+//9. Write a program to implement
+
+//10 and 12. Take three string inputs representing lap times in minute:seconds:milliseconds format and print which lap was the fastest
+import java.util.Scanner
+public class LapTimes {
+    public static void main(String args[]){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter lap 1 time in the format min:sec:ms");
+        String l1 = input.nextLine();
+        System.out.print("Enter lap 2 time in the format min:sec:ms");
+        String l2 = input.nextLine();
+        System.out.print("Enter lap 3 time in the format min:sec:ms");
+        String l3 = input.nextLine();
+
+        int lap1 = ((Integer.parseInt(l1.substring(0,2))) * 60000) + ((Integer.parseInt(l1.substring(2,4)))*1000)+(Integer.parseInt(l1.substring(4,6)));
+        int lap2 = ((Integer.parseInt(l2.substring(0,2))) * 60000) + ((Integer.parseInt(l2.substring(2,4)))*1000)+(Integer.parseInt(l2.substring(4,6)));
+        int lap3 = ((Integer.parseInt(l3.substring(0,2))) * 60000) + ((Integer.parseInt(l3.substring(2,4)))*1000)+(Integer.parseInt(l3.substring(4,6)));
+            int min = (Math.min(Math.min(lap1, lap2), lap3));
+            if (min == lap1){
+                System.out.println("Fastest lap is lap 1:" +l1);}
+             else if (min == lap2){
+                System.out.println("Fastest lap is lap 2:" +l2);}
+            if (min == lap3){
+                    System.out.println("Fastest lap is lap 3:" +l3);}
+
+    }
+}
+
+
+//11. Take two integer inputs from the user and subtract one from the other without using minus operator
+import java.util.Scanner;
+
+public class Subtract{
+    public static void main(String args[]){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter input 1");
+        int num1 = input.nextInt();
+        System.out.println("Enter input 2");
+        int num2 = input.nextInt();
+
+        System.out.println(Math.subtractExact(num1, num2));
+    }
+}
+
+
+//13. Do the 7) question again such that the checking is done in a separate function
+import java.util.Scanner;
+public class CmprStrgs {
+    public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter first string: ");
+        String a = input.nextLine();
+        System.out.println("Enter second string: ");
+        String b = input.nextLine();
+        check(a, b);
+    }
+
+    public static void check(String c, String d){
+    String x = c.toUpperCase();
+    String y = d.toUpperCase();
+        if (x.equals(y)) {
+            if (c.equals(d)){
+            System.out.print("Both Strings are same with same case");}
+            else{
+            System.out.print("Both strings are same with different case");}
+        }
+        else{
+            System.out.print("Strings are not the same");
+        }
+
+    }
+}
+
+
+
+//14. Do the 5th question again by implementing the bubble sort algorithm in a separate function however the function shouldnt return anything
+import java.util.Scanner;
+public class BubbleSort{
+    public static void bubble(int array[], int num) {
+        int temp;
+        for (int i = 0; i < num; i++) {
+            for (int j = i; j < (num - i); j++) {
+                if (array[j - i] > array[j]) {
+                    temp = array[j - 1];
+                    array[j - 1] = array[j];
+                    array[j] = temp;}
+            }
+        }
+
+        for (int a = 0; a < num; a++) {
+            System.out.println("\t" + array[a]);}
+    }
+
+    public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the number of elements: ");
+        int n = input.nextInt();
+        int[] array1 = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            System.out.println("Enter the elements of the array: ");
+            array1[i] = input.nextInt();
+        }
+        BubbleSort.bubble(array1, n);
+    }
+}
+
+
+//15.Implement two classes hello_world and intro such that both are in separate files
+public class HelloWorld{
+    public static void main(String args []){
+        intro a = new intro();
+        a.print_intro();
+        inherit b = new inherit();
+        b.print_hw();}
+}
+
+public class intro{
+    public static void printHw(){
+        System.out.println("Hello World");}
+}
+class inherit extends intro{
+    public static void printIntro(){
+        System.out.println("Hi I am Student of MIT");}
+}
+//16.Create a class MIT and a class student. The class student has the following private data members:
+class student{
+    String name;
+    String branch;
+    int reg_no;
+    public void details(){
+        System.out.println(name);
+        System.out.println(branch);
+        System.out.println(reg_no);
+    }
+}
