@@ -200,6 +200,20 @@ if(temp == reverse_number):
     print("It is a palindrome number")
 else:
     print("It is not a palindrome number")
+    
+    
+    OR
+    
+    
+def palin(num):
+    print(num)
+    num = num[0:]
+    if num == num[[-1::-1]:
+        print("It is a palindrome number")
+    else:
+        print("It is not a palindrome number")
+num = input("Enter number:")
+palin(num)
 
 #9. implement the following
 #During acceleration  testing you press 1 once when the car leaves the start line and press once again when the car crosses the finish line. The program should print the acceleration time. Now the endurance testing starts and you give an input 2. Now whenever the car passes the startline you press 1 the lap time is printed. Now when acceleration testing starts you press 2 again.  At the end of you press 0 to stop the program
